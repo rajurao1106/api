@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import {Loader} from 'lucide-react'
+import React, { useEffect, useState } from "react";
+import { Loader } from "lucide-react";
 
 function App() {
+  const [message, setMessage] = useState("");
 
-  const [message, setMessage] = useState('')
-
-  useEffect(()=>{
-    const apiTest = async() => {
+  useEffect(() => {
+    const apiTest = async () => {
       try {
-        const response = await fetch("http://localhost:4000/hello")
-        const data =  await response.text()
-        setMessage(data)
+        const response = await fetch("http://localhost:4000/hello");
+        const data = await response.text();
+        setMessage(data);
       } catch (error) {
-        setMessage('server error')
+        setMessage("server error");
       }
-    }
+    };
 
-    apiTest()
-  },[]);
-
-  
+    apiTest();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -28,13 +25,14 @@ function App() {
           Frontend Fetch Example
         </h1>
         <p className="text-gray-600 justify-center items-center flex">
-          Message from Server:{" "}
-          <span className="font-medium text-indigo-600 pl-1">
-            {message || <div class="flex items-center justify-center bg-gray-100">
-  <Loader class="animate-spin h-5 w-5 "/>
-</div>
-}
+          <span className="font-medium text-indigo-600 pr-1">
+            {message || (
+              <div class="flex items-center justify-center bg-gray-100">
+                <Loader class="animate-spin h-5 w-5 " />
+              </div>
+            )}
           </span>
+          how are you?
         </p>
       </div>
     </div>
