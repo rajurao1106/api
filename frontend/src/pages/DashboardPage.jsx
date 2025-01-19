@@ -20,7 +20,7 @@ const DashboardPage = () => {
 				Dashboard
 			</h2>
 
-			<div className='space-y-6'>
+			<div className='space-y-6 '>
 				<motion.div
 					className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
 					initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const DashboardPage = () => {
 					<p className='text-gray-300'>Email: {user.email}</p>
 				</motion.div>
 				<motion.div
-					className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
+					className='p-4  bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.4 }}
